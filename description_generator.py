@@ -26,15 +26,15 @@ def generate_description(table_name, columns):
     )
 
     return response.choices[0].text.strip()
-
+if __name__ == "__main__":
 # Usage
-table_name = "customer_orders"
-columns = [
-    {"name": "order_id", "type": "INTEGER"},
-    {"name": "customer_id", "type": "INTEGER"},
-    {"name": "order_date", "type": "DATE"},
-    {"name": "total_amount", "type": "DECIMAL(10,2)"}
-]
+    table_name = "customer_orders"
+    columns = [
+        {"name": "order_id", "type": "INTEGER"},
+        {"name": "customer_id", "type": "INTEGER"},
+        {"name": "order_date", "type": "DATE"},
+        {"name": "total_amount", "type": "DECIMAL(10,2)"}
+    ]
 
-description = generate_description(table_name, columns)
-print(description)
+    description = generate_description(table_name, columns)
+    print(description)
